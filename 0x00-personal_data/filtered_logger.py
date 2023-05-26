@@ -74,7 +74,8 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     return connector
 
 
-if __name__ == '__main__':
+def main():
+	"""Display all rows in DB"""
     connection = get_db()
     cursor = connection.cursor(dictionary=True)
     query = ("SELECT * FROM users")
@@ -86,3 +87,6 @@ if __name__ == '__main__':
         print(string)
     cursor.close()
     connection.close()
+    
+if __name__ == '__main__':
+	main()
